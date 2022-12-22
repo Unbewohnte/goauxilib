@@ -36,6 +36,9 @@ func init() {
 
 // Set up loggers to write to the given writer
 func SetOutput(writer io.Writer) {
+	if writer == nil {
+		writer = io.Discard
+	}
 	infoLog.SetOutput(writer)
 	warningLog.SetOutput(writer)
 	errorLog.SetOutput(writer)
