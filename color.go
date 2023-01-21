@@ -30,7 +30,7 @@ func RGBToLinear(r uint8, g uint8, b uint8) (float64, float64, float64) {
 	return CToLinear(r), CToLinear(g), CToLinear(b)
 }
 
-// Get approximate RGB color luminance (brightness)
+// Get approximate RGB color luminance (brightness) from 0 to 1
 func LuminanceRGB(r uint8, g uint8, b uint8) float64 {
 	rLin, gLin, bLin := RGBToLinear(r, g, b)
 	return 0.2126*rLin + 0.7152*gLin + 0.0722*bLin
